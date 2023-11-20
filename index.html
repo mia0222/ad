@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <div></div>
+    <script>
+        // devicemotionイベントで、加速度センサーの値を継続的に取得することができます。
+        window.ondevicemotion = function(event) {
+
+        // ユーザーによる加速度 + 重力
+        var x = event.accelerationIncludingGravity.x; // 左右
+        var y = event.accelerationIncludingGravity.y; // 上下
+        var z = event.accelerationIncludingGravity.z; // 前後
+        var html = 'ユーザー加速度＋重力：　<br>x=' + x + "<br> y=" + y + "<br> z=" + z;
+        info.innerHTML = html;
+
+        // ユーザーによる加速度
+        var x = event.acceleration.x; // 左右
+        var y = event.acceleration.y; // 上下
+        var z = event.acceleration.z; // 前後
+        var html = 'ユーザー加速度：　<br>x=' + x + "<br> y=" + y + "<br> z=" + z;
+        info2.innerHTML = html;
+
+        // 前回呼び出しからの経過時間
+        info3.innerHTML = '前回からの時間：　<br>' + event.interval;
+        };
+
+    </script>
+</body>
+</html>
